@@ -361,7 +361,39 @@ except代码块告诉python，出现异常时该怎么办
  要重构代码，可将其大部分逻辑放到一个或多个文件中。
  
  
-
+第十一章 测试代码
+11.1测试函数
+11.1.1单元测试和测试用例：
+python标准库中的模块unittest提供了代码测试工具。
+单元测试用于核实函数的某个方面没有问题；
+测试用例是一组单元测试，这些单元测试一起核实函数在各种情形下的行为都符合要求。
+全覆盖式测试用例包含一整套单元测试，涵盖了各种可能的函数使用方式。
+11.1.2可通过的测试：
+格式：import unittest
+      class NamesTestCase(unittest,TestCase):
+        def test_名字(self):
+          内容
+ 首先导入模块unittest和要测试的函数；
+ 再用test给函数开头命名，所有以test打头的方法都将自动运行
+ unittest类最有用的功能之一：一个断言方法；
+ 断言方法用来核实得到的结果是否与期望的结果一致：self.assertEqual()
+ 11.1.3不能通过测试
+ 11.1.4测试未通过怎么办：
+ 应修复导致测试不能通过的代码：检查刚对函数所作的修改，找出导致函数行为不符合预期的修改
+ 11.1.5添加新测试：
+ 方法名必须以test_打头，这样它才会在我们运行时自动运行
+ 11.2测试类
+ 11.2.1各种断言方法：
+ assertEqual(a,b)  核实a == b
+ assertNotEqual(a,b)  核实a != b 
+ assertTrue(X)     核实x为True
+ assertFalse(X)    核实x为False
+ assertIn(item,list) 核实item在list中
+ assertNotIn(item,list) 核实item不在list中
+ 11.2.4方法setUp()
+ unittest.TestCase类包含方法setUp(),让我们只需要创建这些对象一次，并在每个测试方法中使用它们。
+ 如果在TestCase类中包含了方法setUp()，python将先运行它，再运行各个以test_打头的方法。
+ 
 
 
 
