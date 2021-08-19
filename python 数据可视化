@@ -1,0 +1,20 @@
+1、绘制简单折线图
+ -先导入模块pyplot，并给它指定别名plt
+  import matplotlib.pyplot as plt
+  squares = [1,4,9,16,25]  创建列表
+  plt.plot(squares)  传递列表给plot
+  plt.show()  打开matplotlib查看器，并显示绘制的图形
+ -修改标签文字和线条粗细
+  plt.title('名字',fontsize=粗细)
+  plt.xlabel('名字',fontsize=粗细)
+  plt.ylabel('名字',fontsize=粗细)
+  plt.tick_params(axis='刻度标记',labelsize=粗细)
+ -校正图形
+  当你向plot()提供一系列数字时，它假设第一个数据点对应的x坐标值为0，但我们的第一个点对应的x值为1。
+  为改变这种默认行为，我们可以给plot()同时提供输入值和输出值
+  imput_values = [1,2,3,4,5]
+  内容
+  plt.plot(input_values,squares,linewidth=粗细)
+2、使用scatter()绘制散点图并设置其样式
+ -
+  
